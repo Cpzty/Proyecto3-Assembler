@@ -1,9 +1,9 @@
 /* Programa Laboratorio no.10 */
 
-/* Autor: José Rodolfo Pérez  */
-/* Carné: 16056 */
-/* Autor: Cristian Pérez  */
-/* Carné: 16011 */
+/* Autor: JosÃ© Rodolfo PÃ©rez  */
+/* CarnÃ©: 16056 */
+/* Autor: Cristian PÃ©rez  */
+/* CarnÃ©: 16011 */
  
 /* Descripcion del Porgrama: Graficador ASCII 2D ayylmao*/ 
 
@@ -15,6 +15,22 @@
 .align 2
 .global main
 .type main,%function
+
+.global array1
+.global array2
+.global array3
+.global array4
+.global array5
+.global array6
+.global array7
+.global array8
+.global array9
+.global array10
+.global array11
+.global array12
+.global array13
+.global array14
+.global array15
 
 main:
 	stmfd sp!, {lr}
