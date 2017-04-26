@@ -31,6 +31,7 @@
 .global array13
 .global array14
 .global array15
+.global e1
 
 main:
 	stmfd sp!, {lr}
