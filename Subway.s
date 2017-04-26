@@ -4,40 +4,59 @@
 @acceder a puntos especificos de cada array
 subway:
 	push {lr}
-	ldr r0,=opciones
-	bl puts
-	@@leer opciones
-	bl getchar
-	cmp r0,#'1'
-	@salto al array1
-	beq arra1
+	cmp r0,#1
+	@salto al array7
+	beq arra7
 	cmpne r0,#2
-	@salto al array2
-	beq arra2
+	@salto al array6
+	beq arra6
 	cmpne r0,#3
-	@salto al array3
-	beq arra3
+	@salto al array5
+	beq arra5
 	cmpne r0,#4
 	@salto al array4
 	beq arra4
 	cmpne r0,#5
-	@salto al array5
-	beq arra5
+	@salto al array3
+	beq arra3
 	cmpne r0,#6
-	@salto al array6
-	beq arra6
+	@salto al array2
+	beq arra2
 	cmpne r0,#7
-	@salto al array7
-	beq arra7
-	cmpne r0,#8
-	@salto al array8
+	@salto al array1
+	beq arra1
+
+	cmpne r0, #0
+	@salto al array 8
 	beq arra8
-	cmpne r0,#9
+
+
+	/*Negativos??*/
+
+	cmpne r0,#-1
 	@salto al array9
 	beq arra9
-	cmpne r0,#10
+	cmpne r0,#-2
 	@salto al array10
 	beq arra10
+	cmpne r0,#-3
+	@salto al array11
+	beq arra11
+	cmpne r0,#-4
+	@salto al array12
+	beq arra12
+	cmpne r0,#-5
+	@salto al array13
+	beq arra13
+	cmpne r0,#-6
+	@salto al array14
+	beq arra14
+	cmpne r0,#-7
+	@salto al array15
+	beq arra15
+
+
+
 
 @se pasa al array1	
 arra1:
@@ -117,10 +136,9 @@ b regreso
 	
 	
 regreso:	
-	pop{pc}
+	pop {pc}
 	
 .data
 .align 2
-opciones:
-.asciz ""\nIngrese primero la altura que desea de 1 a 10, tomando en cuenta que se mueve hacia abajo, es decir que 1 es la altura maxima"
+
 
