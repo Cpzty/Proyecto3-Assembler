@@ -5,7 +5,7 @@
 /* Autor: Cristian Pérez  */
 /* Carné: 16011 */
  
-/* Descripcion del Porgrama: Graficador ASCII 2D ayylmao*/ 
+/* Descripcion del Porgrama: Graficador ASCII 2D */ 
 
 
 /*IMPORTANTE ARREGLO 8 POSICION 25 ES EL 0,0 (TIENE UN SIGNO +)*/
@@ -56,8 +56,15 @@ ciclo:
 	@desplazarnos en el array correcto de impresion
 	add r10, r10, r4
 	@cargar lo que vamos a escribir a r0
-	ldrb r0, = const
-	strb r0, [r10]
+	ldr r0, = const
+	ldrb r1, [r0]
+	strb r1, [r10]
+
+	@ciclo
+	add r6, r6, #4
+	add r9, r9, #4
+	subs r3, r3, #1
+	bne ciclo
 	
 
 
@@ -186,9 +193,9 @@ formatoenter:
 e1:
 	.word 1,3
 x:
-	.word 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,-22,-21,-20,-19,-18,-17,-16,-15,-14,-13,-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,-0,-1,-2,-3
+	.word -1,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,-22,-21,-20,-19,-18,-17,-16,-15,-14,-13,-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,-0,-1,-2,-3
 y:
-	.word 1,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0
+	.word -1,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0
 const:
 	.byte 'x'
 array1:
