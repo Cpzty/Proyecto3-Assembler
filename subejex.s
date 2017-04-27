@@ -4,7 +4,7 @@
 ejex:
 mov r5,#25
 ldr r3,=e1
-ldr r4[r3]
+ldr r4,[r3]
 add r5,r5,r4
 ldr r3,=caracter
 ldr r1,[r3]
