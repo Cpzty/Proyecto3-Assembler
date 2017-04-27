@@ -31,10 +31,35 @@
 .global array13
 .global array14
 .global array15
-.global e1
 
 main:
 	stmfd sp!, {lr}
+
+	@contador para el ciclo de impresion
+	mov r3, #50
+	@locaciones de los arreglos x y y
+	ldr r6, = x
+	ldr r9, = y
+
+ciclo:
+	@inicio del array y
+	ldr r0, [r9], #0
+	@regresa en r0 el array al que tenemos que imprimir
+	bl subway
+	@arreglo correcto de impresion
+	mov r10, r0
+	@cargamos en r0 el array de x
+	ldr r0, [r6], #0
+	bl ejex
+	@guardamos en r4 lo que nos retorna la subrutina
+	mov r4, r0
+	@desplazarnos en el array correcto de impresion
+	add r10, r10, r4
+	@cargar lo que vamos a escribir a r0
+	ldrb r0, = const
+	strb r0, [r10]
+	
+
 
 	@llamamos a la subrutina de impresion
 	ldr r0, =array1
@@ -163,7 +188,7 @@ e1:
 x:
 	.word 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,-22,-21,-20,-19,-18,-17,-16,-15,-14,-13,-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,-0,-1,-2,-3
 y:
-	.word 0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0
+	.word 1,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6,0
 const:
 	.byte 'x'
 array1:
