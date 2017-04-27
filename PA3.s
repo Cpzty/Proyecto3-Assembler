@@ -56,6 +56,7 @@ ciclo:
 	@desplazarnos en el array correcto de impresion
 	add r10, r10, r4
 	@cargar lo que vamos a escribir a r0
+<<<<<<< HEAD
 	ldr r0, = const
 	ldrb r1, [r0]
 	strb r1, [r10]
@@ -65,6 +66,13 @@ ciclo:
 	add r9, r9, #4
 	subs r3, r3, #1
 	bne ciclo
+=======
+	ldrb r0, = const
+	@vamo a ver si es esto
+	@strb r0, [r10]
+	str r0, [r10]
+	
+>>>>>>> origin/master
 	
 
 
