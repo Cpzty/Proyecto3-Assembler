@@ -57,7 +57,10 @@ ciclo:
 	add r10, r10, r4
 	@cargar lo que vamos a escribir a r0
 	ldrb r0, = const
-	strb r0, [r10]
+	@vamo a ver si es esto
+	@strb r0, [r10]
+	str r0, [r10]
+	
 	
 
 
